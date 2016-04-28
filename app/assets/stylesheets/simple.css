@@ -48,3 +48,12 @@ ul.nav li a {
   color: #b94a48;
 }
 
+.flash_warnning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+
+ul{
+display: flex;
+justify-content: flex-end;
+}
