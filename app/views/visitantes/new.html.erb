@@ -2,7 +2,13 @@
 
 <%= render 'form' %>
 
+<% content_for :sidebar do %> 
 
+<h3>Información del contacto</h3>
+<p>Email: galararor@gmail.com</p>
+<% end %>
+
+<%=mensaje1%>
 
 <%= link_to 'Back', visitantes_path %>
 

@@ -17,7 +17,9 @@ class VisitantesController < ApplicationController
     Rails.logger.debug "DEBUG: entrando al método new"
     @visitante = Visitante.new
     Rails.logger.debug "DEBUG: Username"+@visitante.nombre
-
+    flash[:notice] = 'Bienvenido!'
+    flash[:alert] = 'CUIDADO!!. Ruby, tiende a eliminar los errores de sintaxis de u....'
+    flash[:warnning] = 'Mosca!'
   end
 
   # GET /visitantes/1/edit
@@ -31,10 +33,10 @@ class VisitantesController < ApplicationController
 
     respond_to do |format|
       if @visitante.save
-        format.html { redirect_to @visitante, notice: 'Visitante was successfully created.' }
+        format.html { redirect_to @visitante, notice: 'Visitante was successfully created.' } 
         format.json { render :show, status: :created, location: @visitante }
       else
-        format.html { render :new }
+        format.html { render :new } #Volver a cargar el formulario #El :new carga vistas pero no borra los parametros
         format.json { render json: @visitante.errors, status: :unprocessable_entity }
       end
     end
