@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :visitantes
+  resources :contactos, only: [:new, :create]
 
   root to: 'visitantes#index'
   #root to: redirect('/acercade.html')
